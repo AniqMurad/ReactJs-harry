@@ -15,6 +15,9 @@ function App() {
       msg: message,
       type: type
     })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
   }
   const toggleMode = () => {
     if (mode === 'light') {
@@ -38,7 +41,7 @@ function App() {
         </p>
         <a
           className=="App-link"
-          href="https://reactjs.org"
+          href="=>https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,7 +56,7 @@ function App() {
       <Navbar title="Bookify" about="About Bookify" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3" >
-        <TextForm heading="Enter the text to analyze below" mode={mode} />
+        <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
         {/*<About/> */}
       </div>
     </>
